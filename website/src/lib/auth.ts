@@ -24,29 +24,39 @@ let authUnsub: Unsubscribe | null = null;
 
 export function initAuthListener(): () => void {
   if (authUnsub) return authUnsub;
-  const auth = getFirebaseAuth();
-  authUnsub = onAuthStateChanged(
-    auth,
-    (user) => {
-      (store.dispatch as AppDispatch)(authStateChanged(toAuthUser(user)));
-      if (dataUnsub) {
-        dataUnsub();
-        dataUnsub = null;
-      }
-      if (user) {
-        dataUnsub = subscribeUserData(
-          user.uid,
-          store.dispatch as AppDispatch,
+  try {
+    const auth = getFirebaseAuth();
+    authUnsub = onAuthStateChanged(
+      auth,
+      (user) => {
+        (store.dispatch as AppDispatch)(authStateChanged(toAuthUser(user)));
+        if (dataUnsub) {
+          dataUnsub();
+          dataUnsub = null;
+        }
+        if (user) {
+          dataUnsub = subscribeUserData(
+            user.uid,
+            store.dispatch as AppDispatch,
+          );
+        }
+      },
+      (err) => {
+        (store.dispatch as AppDispatch)(
+          showError(err instanceof Error ? err.message : 'Auth error'),
         );
-      }
-    },
-    (err) => {
-      (store.dispatch as AppDispatch)(
-        showError(err instanceof Error ? err.message : 'Auth error'),
-      );
-    },
-  );
-  return authUnsub;
+      },
+    );
+  } catch (err) {
+    const message =
+      err instanceof Error ? err.message : 'Failed to initialize Firebase';
+    (store.dispatch as AppDispatch)(authError(message));
+    (store.dispatch as AppDispatch)(showError(message));
+    // Surface as unauthenticated so the user lands on /login and can
+    // see the real problem instead of a perpetual "Loading…".
+    (store.dispatch as AppDispatch)(authStateChanged(null));
+  }
+  return authUnsub ?? (() => undefined);
 }
 
 export async function signIn(email: string, password: string): Promise<void> {
