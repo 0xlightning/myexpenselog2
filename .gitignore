@@ -1,0 +1,102 @@
+# ─── Node / npm ───────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+.pnp.cjs
+.pnp.loader.mjs
+.npm/
+.yarn/
+.pnpm-store/
+package-lock.json.bak
+yarn-error.log*
+yarn.lock.bak
+
+# ─── Build output (CRA / Vite / Next / generic) ───────────────────────────────
+build/
+dist/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+.turbo/
+.vercel/
+.netlify/
+storybook-static/
+
+# ─── CRA-specific ─────────────────────────────────────────────────────────────
+.eslintcache
+
+# ─── Test / coverage ──────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+*.lcov
+.vitest/
+
+# ─── Environment / secrets ────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.envrc
+
+# ─── Firebase ─────────────────────────────────────────────────────────────────
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+pglite-debug.log*
+.firestore/
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── OS junk ──────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── IDE / editor ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.vim/
+.nvim/
+*.sublime-project
+*.sublime-workspace
+.history/
+
+# ─── TypeScript build info ─────────────────────────────────────────────────────
+*.tsbuildinfo
+.tsbuildinfo
+
+# ─── Misc tooling caches ──────────────────────────────────────────────────────
+.eslintcache
+.stylelintcache
+.prettiercache
+.cache-loader
+
+# ─── Phase markers (dev-only, never commit) ───────────────────────────────────
+.phase-*.done
+
+# ─── Local dev / scratch ──────────────────────────────────────────────────────
+scratch/
+tmp/
+temp/
+*.local

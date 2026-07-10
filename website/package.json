@@ -1,0 +1,60 @@
+{
+  "name": "myexpense-log",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.0",
+    "firebase": "^10.12.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.23.0"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^3.0.4",
+    "@vitest/coverage-v8": "^1.6.1",
+    "autoprefixer": "^10.4.19",
+    "jsdom": "^24.1.3",
+    "postcss": "^8.4.38",
+    "react-scripts": "5.0.1",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^4.9.5",
+    "vitest": "^1.6.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "eject": "react-scripts eject",
+    "lint": "echo 'lint: configure ESLint in a fast-follow'",
+    "format": "echo 'format: configure Prettier in a fast-follow'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ],
+    "ignorePatterns": [
+      "src/**/*.test.ts",
+      "src/**/*.test.tsx"
+    ]
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "\\.test\\.(ts|tsx)$"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

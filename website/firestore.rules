@@ -1,0 +1,33 @@
+rules_version = '2';
+
+// All data is nested under users/{uid}. Every rule checks the request
+// path's uid against request.auth.uid. Default-deny applies everywhere
+// not explicitly matched.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // Per-user data tree. {document=**} covers every collection nested
+    // under users/{uid} in one match — income_sources, income_records,
+    // expense_categories, expenditure_records, investment_categories,
+    // investments. Any future collection added under users/{uid} is
+    // covered automatically; to add a public collection later, write
+    // a separate match block above this one.
+    match /users/{uid}/{document=**} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Catch-all default deny. Belt and suspenders; the /{document=**}
+    // above is the only intentional allow.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
