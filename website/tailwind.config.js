@@ -1,76 +1,103 @@
 /** @type {import('tailwindcss').Config} */
-// OKLCH tokens are referenced via raw `var(--token)` — Tailwind opacity
-// modifiers (`bg-primary/50`) are NOT supported because OKLCH can't be
-// decomposed into RGB channels by Tailwind. If you need an opacity
-// variant, use `bg-[color-mix(in_oklch,var(--primary)_50%,transparent)]`
-// in className instead.
+const animatePlugin = require('tailwindcss-animate');
+
 module.exports = {
-  content: ['./src/**/*.{ts,tsx}'],
+  content: [
+    './public/index.html',
+    './src/**/*.{js,jsx}',
+  ],
   darkMode: 'class',
   theme: {
-    container: {
-      center: true,
-      padding: '1rem',
-    },
     extend: {
       colors: {
-        border: 'var(--border)',
-        input: 'var(--input)',
-        ring: 'var(--ring)',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        primary: {
-          DEFAULT: 'var(--primary)',
-          foreground: 'var(--primary-foreground)',
-        },
-        secondary: {
-          DEFAULT: 'var(--secondary)',
-          foreground: 'var(--secondary-foreground)',
-        },
-        destructive: {
-          DEFAULT: 'var(--destructive)',
-          foreground: 'var(--primary-foreground)',
-        },
-        muted: {
-          DEFAULT: 'var(--muted)',
-          foreground: 'var(--muted-foreground)',
-        },
-        accent: {
-          DEFAULT: 'var(--accent)',
-          foreground: 'var(--accent-foreground)',
+        background: 'oklch(var(--background) / <alpha-value>)',
+        foreground: 'oklch(var(--foreground) / <alpha-value>)',
+        card: {
+          DEFAULT: 'oklch(var(--card) / <alpha-value>)',
+          foreground: 'oklch(var(--card-foreground) / <alpha-value>)',
         },
         popover: {
-          DEFAULT: 'var(--popover)',
-          foreground: 'var(--popover-foreground)',
+          DEFAULT: 'oklch(var(--popover) / <alpha-value>)',
+          foreground: 'oklch(var(--popover-foreground) / <alpha-value>)',
         },
-        card: {
-          DEFAULT: 'var(--card)',
-          foreground: 'var(--card-foreground)',
+        primary: {
+          DEFAULT: 'oklch(var(--primary) / <alpha-value>)',
+          foreground: 'oklch(var(--primary-foreground) / <alpha-value>)',
+        },
+        secondary: {
+          DEFAULT: 'oklch(var(--secondary) / <alpha-value>)',
+          foreground: 'oklch(var(--secondary-foreground) / <alpha-value>)',
+        },
+        muted: {
+          DEFAULT: 'oklch(var(--muted) / <alpha-value>)',
+          foreground: 'oklch(var(--muted-foreground) / <alpha-value>)',
+        },
+        accent: {
+          DEFAULT: 'oklch(var(--accent) / <alpha-value>)',
+          foreground: 'oklch(var(--accent-foreground) / <alpha-value>)',
+        },
+        destructive: {
+          DEFAULT: 'oklch(var(--destructive) / <alpha-value>)',
+          foreground: 'oklch(var(--destructive-foreground) / <alpha-value>)',
+        },
+        border: 'oklch(var(--border) / <alpha-value>)',
+        input: 'oklch(var(--input) / <alpha-value>)',
+        ring: 'oklch(var(--ring) / <alpha-value>)',
+        chart: {
+          1: 'oklch(var(--chart-1) / <alpha-value>)',
+          2: 'oklch(var(--chart-2) / <alpha-value>)',
+          3: 'oklch(var(--chart-3) / <alpha-value>)',
+          4: 'oklch(var(--chart-4) / <alpha-value>)',
+          5: 'oklch(var(--chart-5) / <alpha-value>)',
         },
         sidebar: {
-          DEFAULT: 'var(--sidebar)',
-          foreground: 'var(--sidebar-foreground)',
-          primary: 'var(--sidebar-primary)',
-          'primary-foreground': 'var(--sidebar-primary-foreground)',
-          accent: 'var(--sidebar-accent)',
-          'accent-foreground': 'var(--sidebar-accent-foreground)',
-          border: 'var(--sidebar-border)',
-          ring: 'var(--sidebar-ring)',
+          DEFAULT: 'oklch(var(--sidebar) / <alpha-value>)',
+          foreground: 'oklch(var(--sidebar-foreground) / <alpha-value>)',
+          primary: 'oklch(var(--sidebar-primary) / <alpha-value>)',
+          'primary-foreground': 'oklch(var(--sidebar-primary-foreground) / <alpha-value>)',
+          accent: 'oklch(var(--sidebar-accent) / <alpha-value>)',
+          'accent-foreground': 'oklch(var(--sidebar-accent-foreground) / <alpha-value>)',
+          border: 'oklch(var(--sidebar-border) / <alpha-value>)',
+          ring: 'oklch(var(--sidebar-ring) / <alpha-value>)',
         },
-        chart: {
-          1: 'var(--chart-1)',
-          2: 'var(--chart-2)',
-          3: 'var(--chart-3)',
-          4: 'var(--chart-4)',
-          5: 'var(--chart-5)',
-        },
+        ink: 'oklch(var(--foreground) / <alpha-value>)',
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        none: '0',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+        mono: ['var(--font-mono)'],
+        display: ['var(--font-display)'],
+      },
+      keyframes: {
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        'slide-up': {
+          from: { opacity: '0', transform: 'translateY(4px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-down': {
+          from: { opacity: '0', transform: 'translateY(-4px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-right': {
+          from: { opacity: '0', transform: 'translateX(-8px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 240ms ease-out',
+        'slide-up': 'slide-up 280ms ease-out',
+        'slide-down': 'slide-down 240ms ease-out',
+        'slide-right': 'slide-right 280ms ease-out',
       },
     },
   },
-  plugins: [],
+  plugins: [animatePlugin],
 };
