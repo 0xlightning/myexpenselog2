@@ -25,7 +25,6 @@ export function StatTile({
 }) {
   const chartClass = `text-${TONE_TO_CHART[tone]}`;
   const bgClass = `bg-${TONE_TO_CHART[tone]}/10`;
-  const borderClass = `border-${TONE_TO_CHART[tone]}/20`;
 
   if (loading) {
     return (
