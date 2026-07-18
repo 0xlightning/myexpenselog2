@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Preview - Shadcn Preset b3T4sf8P3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: 'oklch(0.99 0.002 227.5)',
+            foreground: 'oklch(0.148 0.004 228.8)',
+            card: 'oklch(0.99 0.002 227.5)',
+            'card-foreground': 'oklch(0.148 0.004 228.8)',
+            popover: 'oklch(0.99 0.002 227.5)',
+            'popover-foreground': 'oklch(0.148 0.004 228.8)',
+            primary: 'oklch(0.52 0.105 223.128)',
+            'primary-foreground': 'oklch(0.984 0.019 200.873)',
+            secondary: 'oklch(0.967 0.001 286.375)',
+            'secondary-foreground': 'oklch(0.21 0.006 285.885)',
+            muted: 'oklch(0.963 0.002 197.1)',
+            'muted-foreground': 'oklch(0.56 0.021 213.5)',
+            accent: 'oklch(0.52 0.105 223.128)',
+            'accent-foreground': 'oklch(0.984 0.019 200.873)',
+            destructive: 'oklch(0.577 0.245 27.325)',
+            border: 'oklch(0.925 0.005 214.3)',
+            input: 'oklch(0.925 0.005 214.3)',
+            ring: 'oklch(0.723 0.014 214.4)',
+            'chart-1': 'oklch(0.897 0.196 126.665)',
+            'chart-2': 'oklch(0.768 0.233 130.85)',
+            'chart-3': 'oklch(0.648 0.2 131.684)',
+            'chart-4': 'oklch(0.532 0.157 131.589)',
+            'chart-5': 'oklch(0.453 0.124 130.933)',
+            sidebar: 'oklch(0.987 0.002 197.1)',
+            'sidebar-foreground': 'oklch(0.148 0.004 228.8)',
+            'sidebar-primary': 'oklch(0.609 0.126 221.723)',
+            'sidebar-primary-foreground': 'oklch(0.984 0.019 200.873)',
+            'sidebar-accent': 'oklch(0.963 0.002 197.1)',
+            'sidebar-accent-foreground': 'oklch(0.218 0.008 223.9)',
+            'sidebar-border': 'oklch(0.925 0.005 214.3)',
+            'sidebar-ring': 'oklch(0.723 0.014 214.4)',
+          },
+          borderRadius: {
+            lg: '0.45rem',
+            md: 'calc(0.45rem - 2px)',
+            sm: 'calc(0.45rem - 4px)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: oklch(0.99 0.002 227.5);
+      color: oklch(0.148 0.004 228.8);
+      font-family: 'Inter Variable', system-ui, sans-serif;
+      transition: background-color 240ms ease, color 240ms ease;
+    }
+    .dark {
+      background-color: oklch(0.148 0.004 228.8);
+      color: oklch(0.987 0.002 197.1);
+    }
+    .swatch {
+      width: 120px;
+      height: 80px;
+      border-radius: 0.45rem;
+      border: 1px solid oklch(0.925 0.005 214.3);
+      margin-bottom: 0.5rem;
+    }
+    .color-label {
+      font-size: 0.75rem;
+      color: oklch(0.56 0.021 213.5);
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body class="p-8">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold mb-2" style="color: oklch(0.148 0.004 228.8);">Theme Preview: Shadcn Preset b3T4sf8P3</h1>
+    <p class="text-muted-foreground mb-8">Cyan-based theme with OKLCH color system</p>
+
+    <!-- Light Mode Colors -->
+    <div class="mb-12">
+      <h2 class="text-xl font-semibold mb-4" style="color: oklch(0.148 0.004 228.8);">Light Mode Colors</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+        <!-- Background/Foreground -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.99 0.002 227.5);"></div>
+          <div class="color-label">background</div>
+          <code class="text-xs mt-1">oklch(0.99 0.002 227.5)</code>
+        </div>
+
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.148 0.004 228.8); color: white;"></div>
+          <div class="color-label">foreground</div>
+          <code class="text-xs mt-1">oklch(0.148 0.004 228.8)</code>
+        </div>
+
+        <!-- Primary -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.52 0.105 223.128); color: white;"></div>
+          <div class="color-label">primary</div>
+          <code class="text-xs mt-1">oklch(0.52 0.105 223.128)</code>
+        </div>
+
+        <!-- Primary Foreground -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.984 0.019 200.873); color: black;"></div>
+          <div class="color-label">primary-foreground</div>
+          <code class="text-xs mt-1">oklch(0.984 0.019 200.873)</code>
+        </div>
+
+        <!-- Secondary -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.967 0.001 286.375); color: black;"></div>
+          <div class="color-label">secondary</div>
+          <code class="text-xs mt-1">oklch(0.967 0.001 286.375)</code>
+        </div>
+
+        <!-- Muted -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.963 0.002 197.1); color: black;"></div>
+          <div class="color-label">muted</div>
+          <code class="text-xs mt-1">oklch(0.963 0.002 197.1)</code>
+        </div>
+
+        <!-- Muted Foreground -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.56 0.021 213.5); color: white;"></div>
+          <div class="color-label">muted-foreground</div>
+          <code class="text-xs mt-1">oklch(0.56 0.021 213.5)</code>
+        </div>
+
+        <!-- Accent -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.52 0.105 223.128); color: white;"></div>
+          <div class="color-label">accent</div>
+          <code class="text-xs mt-1">oklch(0.52 0.105 223.128)</code>
+        </div>
+
+        <!-- Destructive -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.577 0.245 27.325); color: white;"></div>
+          <div class="color-label">destructive</div>
+          <code class="text-xs mt-1">oklch(0.577 0.245 27.325)</code>
+        </div>
+
+        <!-- Border -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.925 0.005 214.3); color: black;"></div>
+          <div class="color-label">border</div>
+          <code class="text-xs mt-1">oklch(0.925 0.005 214.3)</code>
+        </div>
+
+        <!-- Ring -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.723 0.014 214.4); color: white;"></div>
+          <div class="color-label">ring</div>
+          <code class="text-xs mt-1">oklch(0.723 0.014 214.4)</code>
+        </div>
+
+        <!-- Card -->
+        <div class="text-center">
+          <div class="swatch" style="background-color: oklch(0.99 0.002 227.5); border: 1px solid oklch(0.925 0.005 214.3);"></div>
+          <div class="color-label">card</div>
+          <code class="text-xs mt-1">oklch(0.99 0.002 227.5)</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart Colors -->
+    <div class="mb-12">
+      <h2 class="text-xl font-semibold mb-4" style="color: oklch(0.148 0.004 228.8);">Chart Colors</h2>
+      <div class="grid grid-cols-5 gap-4">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded" style="background-color: oklch(0.897 0.196 126.665);"></div>
+          <code class="text-xs color-label">chart-1</code>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded" style="background-color: oklch(0.768 0.233 130.85);"></div>
+          <code class="text-xs color-label">chart-2</code>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded" style="background-color: oklch(0.648 0.2 131.684);"></div>
+          <code class="text-xs color-label">chart-3</code>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded" style="background-color: oklch(0.532 0.157 131.589);"></div>
+          <code class="text-xs color-label">chart-4</code>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded" style="background-color: oklch(0.453 0.124 130.933);"></div>
+          <code class="text-xs color-label">chart-5</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- UI Components Preview -->
+    <div class="mb-12">
+      <h2 class="text-xl font-semibold mb-4" style="color: oklch(0.148 0.004 228.8);">UI Components Preview</h2>
+
+      <div class="space-y-6">
+        <!-- Buttons -->
+        <div>
+          <h3 class="font-medium mb-3" style="color: oklch(0.148 0.004 228.8);">Buttons</h3>
+          <div class="flex gap-4 items-end">
+            <button style="background-color: oklch(0.52 0.105 223.128); color: oklch(0.984 0.019 200.873); padding: 0.5rem 1rem; border-radius: 0.45rem; border: none; cursor: pointer;">Primary</button>
+            <button style="background-color: oklch(0.967 0.001 286.375); color: oklch(0.21 0.006 285.885); padding: 0.5rem 1rem; border-radius: 0.45rem; border: none; cursor: pointer;">Secondary</button>
+            <button style="background-color: transparent; color: oklch(0.52 0.105 223.128); padding: 0.5rem 1rem; border-radius: 0.45rem; border: 2px solid oklch(0.52 0.105 223.128); cursor: pointer;">Outline</button>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div>
+          <h3 class="font-medium mb-3" style="color: oklch(0.148 0.004 228.8);">Card</h3>
+          <div style="background-color: oklch(0.99 0.002 227.5); border: 1px solid oklch(0.925 0.005 214.3); border-radius: 0.45rem; padding: 1.5rem;">
+            <h4 class="font-bold mb-2" style="color: oklch(0.148 0.004 228.8);">Card Title</h4>
+            <p style="color: oklch(0.56 0.021 213.5);">Card description with muted foreground text for secondary information.</p>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div>
+          <h3 class="font-medium mb-3" style="color: oklch(0.148 0.004 228.8);">Input</h3>
+          <div>
+            <input type="text" placeholder="Enter text..." style="background-color: oklch(0.925 0.005 214.3); color: oklch(0.148 0.004 228.8); padding: 0.5rem 0.75rem; border-radius: 0.45rem; border: 1px solid oklch(0.925 0.005 214.3); width: 250px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="border-t pt-8">
+      <button onclick="document.body.classList.toggle('dark')" class="px-4 py-2 rounded text-sm" style="background-color: oklch(0.925 0.005 214.3); color: oklch(0.148 0.004 228.8);">
+        Toggle Dark Mode
+      </button>
+      <p class="text-sm color-label mt-2">Click to see dark mode colors</p>
+    </div>
+  </div>
+</body>
+</html>
